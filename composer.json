@@ -1,6 +1,6 @@
 {
   "name": "starbug/db",
-  "type": "starbug-module",
+  "type": "library",
   "description": "Starbug database module.",
   "license": "GPL-3.0-or-later",
   "authors": [
@@ -10,7 +10,10 @@
     }
   ],
   "extra": {
-    "namespace": "Starbug\\Db"
+    "starbug": {
+      "type": "module",
+      "namespace": "Starbug\\Db"
+    }
   },
   "require": {
     "php": ">=8.0",
