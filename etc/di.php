@@ -27,8 +27,6 @@ use Starbug\Db\Query\Hook\StoreMd5Hook;
 use Starbug\Db\Query\Hook\StoreOperationHook;
 use Starbug\Db\Query\Hook\StoreOptionalUpdateHook;
 use Starbug\Db\Query\Hook\StoreOrderedHook;
-use Starbug\Db\Query\Hook\StoreOwnerHook;
-use Starbug\Db\Query\Hook\StorePasswordHook;
 use Starbug\Db\Query\Hook\StoreReferencesHook;
 use Starbug\Db\Query\Hook\StoreRequiredHook;
 use Starbug\Db\Query\Hook\StoreSelectionHook;
@@ -37,7 +35,6 @@ use Starbug\Db\Query\Hook\StoreTimeHook;
 use Starbug\Db\Query\Hook\StoreTimestampHook;
 use Starbug\Db\Query\Hook\StoreTypeHook;
 use Starbug\Db\Query\Hook\StoreUniqueHook;
-use Starbug\Db\Query\Hook\StoreUploadHook;
 use Starbug\Db\Schema\QueryCompilerHook;
 use Starbug\Db\Script\Describe;
 use Starbug\Db\Script\Migrate;
@@ -110,8 +107,6 @@ return [
     "operation" => StoreOperationHook::class,
     "optional_update" => StoreOptionalUpdateHook::class,
     "ordered" => StoreOrderedHook::class,
-    "owner" => StoreOwnerHook::class,
-    "password" => StorePasswordHook::class,
     "references" => StoreReferencesHook::class,
     "required" => StoreRequiredHook::class,
     "selection" => StoreSelectionHook::class,
@@ -120,7 +115,6 @@ return [
     "timestamp" => StoreTimestampHook::class,
     "type" => StoreTypeHook::class,
     "unique" => StoreUniqueHook::class,
-    "upload" => StoreUploadHook::class
   ],
   "databases.active" => function (ContainerInterface $container) {
     return $container->get("databases.".$container->get("db"));

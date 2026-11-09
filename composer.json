@@ -30,14 +30,12 @@
   },
   "suggest": {
     "ext-yaml": "YAML fixture loading via Importer\\Read\\YamlFixtureStrategy.",
-    "starbug/auth": "Session-aware password, ownership, and action hooks.",
-    "starbug/files": "File upload handling via StoreUploadHook.",
+    "starbug/auth": "Permission-scoped action queries via Query\\Extensions\\Action.",
     "starbug/importer": "Import write strategies via Importer\\Write\\DatabaseStrategy and YAML fixtures in the testing trait.",
     "starbug/macro": "Token replacement in column patterns via StoreSlugHook.",
     "starbug/operation": "Operation-backed columns via StoreOperationHook.",
     "starbug/resource-locator": "Collection resolution via ResourceLocatorInterface.",
-    "starbug/testing": "DatabaseTestCase and WebDatabaseTestCase bases.",
-    "starbug/users": "Password strength validation via StorePasswordHook (provides zxcvbn-php)."
+    "starbug/testing": "DatabaseTestCase and WebDatabaseTestCase bases."
   },
   "autoload": {
     "psr-4": {
