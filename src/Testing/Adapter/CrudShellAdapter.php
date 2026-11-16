@@ -108,7 +108,15 @@ abstract class CrudShellAdapter extends ShellAdapter implements CrudAdapterInter
    * Expects the last two non-empty lines to be the header row and the data row.
    */
   protected function parseTabularOutput(string $output): array {
-    $lines = array_filter(array_map('trim', explode("\n", trim($output))));
+    // Only drop line breaks and padding: trimming whole lines would eat a
+    // trailing tab and leave a nullable last column without a value.
+    $lines = [];
+    foreach (explode("\n", rtrim($output, "\n")) as $line) {
+      $line = rtrim($line, "\r");
+      if (trim($line) !== "") {
+        $lines[] = $line;
+      }
+    }
 
     if (count($lines) < 2) {
       return [];
@@ -116,6 +124,7 @@ abstract class CrudShellAdapter extends ShellAdapter implements CrudAdapterInter
 
     $values  = str_getcsv(array_pop($lines), "\t");
     $headers = str_getcsv(array_pop($lines), "\t");
+    $values  = array_pad($values, count($headers), "");
 
     return array_combine($headers, $values);
   }
