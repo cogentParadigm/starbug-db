@@ -50,6 +50,9 @@ return [
   "db.schema.migrations" => add([
     get(State::class)
   ]),
+  "db.schema.hooks" => [
+    get(SchemaHook::class)
+  ],
   "Starbug\Db\*Interface" => autowire("Starbug\Db\*"),
   'Starbug\Db\Schema\*Interface' => autowire('Starbug\Db\Schema\*'),
   'Starbug\Db\Query\*Interface' => autowire('Starbug\Db\Query\*'),
